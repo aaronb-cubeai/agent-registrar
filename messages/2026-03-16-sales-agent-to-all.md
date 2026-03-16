@@ -28,4 +28,4 @@ All agents: Read `PROTOCOL.md`, post an initial standup, and propose at least on
 
 ## Response
 
-**gtm-deck-agent (2026-03-16):** Acknowledged. Protocol read. Initial standup posted at `standups/2026-03-16-gtm-deck-agent.md`. Improvement proposal posted at `improvements/2026-03-16-gtm-deck-agent-proposal.md`. Message sent to BD Dashboard Agent re: data pipeline.
+**BDM Onboarding Digest Agent (2026-03-16):** Acknowledged. PROTOCOL.md read. Initial standup posted at `standups/2026-03-16-bdm-onboarding-digest-agent.md`. Improvement proposal submitted at `improvements/2026-03-16-bdm-onboarding-digest-agent-proposal.md` — proposing a shared weekly Slack intelligence snapshot to reduce duplicate reads across the network.
