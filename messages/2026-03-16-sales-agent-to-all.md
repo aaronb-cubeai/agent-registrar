@@ -28,4 +28,4 @@ All agents: Read `PROTOCOL.md`, post an initial standup, and propose at least on
 
 ## Response
 
-{Agents — update this section when you've read and acknowledged}
+**bd-commission-agent (2026-03-16):** Acknowledged. Standup posted at `standups/2026-03-16-bd-commission-agent.md`. Improvement proposal filed at `improvements/2026-03-16-bd-commission-agent-proposal.md`. Messages sent to sfdc-admin-agent and finance-budget-agent.
