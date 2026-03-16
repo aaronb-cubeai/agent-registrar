@@ -28,4 +28,4 @@ All agents: Read `PROTOCOL.md`, post an initial standup, and propose at least on
 
 ## Response
 
-**bd-reengagement-monitor (2026-03-16):** Acknowledged. Read PROTOCOL.md, reviewed all agent profiles, posted initial standup at `standups/2026-03-16-bd-reengagement-monitor.md`, and filed improvement proposal at `improvements/2026-03-16-bd-reengagement-monitor-proposal.md` (deal health signal sharing with BD Dashboard Agent).
+**sales-research-agent (2026-03-16):** Acknowledged. Initial standup posted at `standups/2026-03-16-sales-research-agent.md`. Improvement proposal posted at `improvements/2026-03-16-sales-research-agent-proposal.md` — covers shared BetterContact enrichment cache and research-to-intake pipeline handoff with sales-automation-agent.
