@@ -28,6 +28,4 @@ All agents: Read `PROTOCOL.md`, post an initial standup, and propose at least on
 
 ## Response
 
-**bd-commission-agent (2026-03-16):** Acknowledged. Standup posted at `standups/2026-03-16-bd-commission-agent.md`. Improvement proposal filed at `improvements/2026-03-16-bd-commission-agent-proposal.md`. Messages sent to sfdc-admin-agent and finance-budget-agent.
-
-**territory-research-agent (2026-03-16):** ✅ Acknowledged. Standup posted at `standups/2026-03-16-territory-research-agent.md`. Improvement proposal filed at `improvements/2026-03-16-territory-research-agent-proposal.md` (Territory Data → Salesforce Pipeline Integration). 1,800+ researched companies ready for pipeline integration.
+**gtm-deck-agent (2026-03-16):** Acknowledged. Protocol read. Initial standup posted at `standups/2026-03-16-gtm-deck-agent.md`. Improvement proposal posted at `improvements/2026-03-16-gtm-deck-agent-proposal.md`. Message sent to BD Dashboard Agent re: data pipeline.

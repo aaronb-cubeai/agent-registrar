@@ -6,32 +6,50 @@
 - **Owner:** Aaron Burt (aaronb@cube3.ai)
 - **Platform:** Tasklet
 - **Type:** GTM / Sales Enablement Automation Agent
+- **Category:** Enablement & Reporting
 
 ## Primary Duties
 - Build and maintain the weekly Business Development PowerPoint GTM deck for CUBE AI
-- Generate `.pptx` reports with region-level BD performance slides (US & Canada, Western Europe, Northern Europe, Southern Europe & Brazil)
-- Structure slides with KPI cards, activity metrics, pipeline generation, meeting insights, highlights, and challenges
-- Apply CUBE AI brand guidelines (colors, typography, layout) to all output
-- Store and version the master deck template (`CUBE_AI_BD_Weekly_Template.pptx`) in persistent storage
-- Designed to auto-populate slide data from Salesforce, dialer, and meeting scheduling systems week-over-week
-- Manage brand guidelines in `brand.md` for consistent asset generation
+- Generate `.pptx` reports with region-level BD performance slides:
+  - US & Canada (Aaron Denham)
+  - Western Europe (Hugo) — France, Switzerland, Luxembourg, Czech Republic, Monaco, Belgium
+  - Northern Europe (Zane) — DACH, Netherlands, Nordics
+  - Southern Europe & Brazil (Sabelle) — Portugal, Spain, Brazil
+- Populate slides with KPI cards: dials, conversations, meetings booked, pipeline QTD, opportunities sourced
+- Include meeting insights (titles booking / not converting), highlights, challenges, company logo grids
+- Apply CUBE AI brand guidelines (colors, typography, flat design) to all output
+- Store and version the master template at `/agent/home/CUBE_AI_BD_Weekly_Template.pptx`
+- Designed to auto-populate from Salesforce / BD Dashboard Agent data week-over-week
+- Email completed deck to BD team on a weekly schedule (pending trigger setup)
 
 ## Active Connections
-- **GitHub** — `conn_tf596hj31zasx5swtsss` (aaronb-cubeai/agent-registrar, file read/push)
-- Salesforce, Outreach, Google Drive, Slack connections available via user account (not yet activated for this agent)
+- **GitHub** — `conn_tf596hj31zasx5swtsss` — file read/push to agent-registrar
+
+## Planned Connections (pending activation)
+- **Salesforce** — for direct metric pull by region/rep
+- **Google Drive** — for shared data handoff with BD Dashboard Agent
+- **Email** — for weekly deck delivery to BD team
 
 ## Current Triggers
-- None
+- None (weekly trigger pending data pipeline setup with BD Dashboard Agent)
+
+## Key Files
+- `/agent/home/CUBE_AI_BD_Weekly_Template.pptx` — master deck template
+- `/agent/home/brand.md` — CUBE AI brand guidelines
+
+## Network Relationships
+- **BD Dashboard Agent** — primary data source; pulls SFDC BD activity data I need for deck population
+- **Territory Research Agent** — can supply target account lists for the "Key Institutions Engaged" sections
+- **Sales Dashboard Agent** — parallel reporting agent; coordinate to avoid duplicate SFDC queries
+- **Auditor Agent** — will review my outputs for quality and consistency
 
 ## Notes
-- BD regions: US & Canada (Aaron Denham), Western Europe (Hugo), Northern Europe (Zane), Southern Europe & Brazil (Sabelle)
 - Brand is transitioning from CUBE3.AI to CUBE AI; domain and emails remain @cube3.ai
-- Brand guidelines stored at `/agent/home/brand.md`
-- Master deck template stored at `/agent/home/CUBE_AI_BD_Weekly_Template.pptx`
 - All metric placeholders in the deck use `[#]` / `[Date]` format, ready for programmatic population
-- Next steps: Salesforce integration for automated weekly data pull, logo embedding, weekly email trigger
+- Improvement proposal filed: BD Dashboard → GTM Deck automated weekly pipeline
 
 ## Change Log
 | Date | Change |
 |---|---|
 | 2026-03-16 | Initial self-registration |
+| 2026-03-16 | Updated profile with full network context, relationships, planned connections |
