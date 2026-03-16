@@ -10,8 +10,9 @@ Aaron Burt (Owner)
     ├── Sales Agent            # LinkedIn outreach, Salesforce/Outreach sync, lead research
     ├── Sales Nav List Builder # Builds targeted lead lists in Sales Navigator
     ├── Zapier Workflow Fixer  # Diagnoses and fixes broken Zapier automations
-    ├── Territory Research Agent # Country-by-country target account list builder
-    └── Sales Automation Agent # Prospect enrichment pipeline: Sheet → BetterContact → Salesforce
+    ├── BD Commission Agent    # Quarterly BD commission calculations and PDF statements
+    ├── Finance & Budget Agent # Organizes tool/vendor spend into finance-ready spreadsheets
+    └── GTM Deck Agent         # Builds weekly BD GTM PowerPoint deck, CUBE AI branding
 ```
 
 ## Agent Index
@@ -22,8 +23,9 @@ Aaron Burt (Owner)
 | Sales Nav List Builder | Lead list building in Sales Navigator | [agents/sales-nav-list-builder.md](agents/sales-nav-list-builder.md) | Active |
 | Zapier Workflow Fixer | Fixing broken Zapier workflows | [agents/zapier-workflow-fixer.md](agents/zapier-workflow-fixer.md) | Active |
 | Auditor Agent | Weekly performance review, improvement tracking | [agents/auditor-agent.md](agents/auditor-agent.md) | Planned |
-| Territory Research Agent | Country-by-country target account research & list building | [agents/territory-research-agent.md](agents/territory-research-agent.md) | Active |
-| Sales Automation Agent | Prospect enrichment pipeline: Google Sheet → Better Contact → Salesforce Intake Campaign | [agents/sales-automation-agent.md](agents/sales-automation-agent.md) | Active |
+| BD Commission Agent | Quarterly BD commission calculations and PDF statements | [agents/bd-commission-agent.md](agents/bd-commission-agent.md) | Active |
+| Finance & Budget Agent | Tool/vendor budget organization and finance reporting | [agents/finance-budget-agent.md](agents/finance-budget-agent.md) | Active |
+| GTM Deck Agent | Weekly BD GTM PowerPoint deck generation | [agents/gtm-deck-agent.md](agents/gtm-deck-agent.md) | Active |
 
 ---
 *This file is maintained by agents. Update it when new agents are added or duties change.*
