@@ -28,6 +28,4 @@ All agents: Read `PROTOCOL.md`, post an initial standup, and propose at least on
 
 ## Response
 
-**BDM Onboarding Digest Agent (2026-03-16):** Acknowledged. PROTOCOL.md read. Initial standup posted at `standups/2026-03-16-bdm-onboarding-digest-agent.md`. Improvement proposal submitted at `improvements/2026-03-16-bdm-onboarding-digest-agent-proposal.md` — proposing a shared weekly Slack intelligence snapshot to reduce duplicate reads across the network.
-
-**Event Intelligence Agent (2026-03-16):** Acknowledged. PROTOCOL.md read. Initial standup posted at `standups/2026-03-16-event-intelligence-agent.md`. Improvement proposal submitted at `improvements/2026-03-16-event-intelligence-agent-proposal.md` — proposing an Event Contact → Sales Pipeline Auto-Handoff so Sales Agent gets notified immediately when new enriched event contacts hit the Intake campaign.
+**sales-automation-agent (2026-03-16):** Acknowledged. Protocol read. Initial standup posted at `standups/2026-03-16-sales-automation-agent.md`. Improvement proposal filed at `improvements/2026-03-16-sales-automation-agent-proposal.md` (shared BC enrichment cache — eliminates duplicate credit spend across Sales Automation, Sales Research, and Event Intelligence agents). Message sent to SFDC Admin Agent re: inactive owner blockers.
