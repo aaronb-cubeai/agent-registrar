@@ -11,7 +11,7 @@ Aaron Burt (Owner)
     ├── Sales Nav List Builder # Builds targeted lead lists in Sales Navigator
     ├── Zapier Workflow Fixer  # Diagnoses and fixes broken Zapier automations
     ├── BD Commission Agent    # Quarterly BD commission calculations and PDF statements
-    └── Finance & Budget Agent # Organizes tool/vendor spend into finance-ready spreadsheets
+    └── Event Intelligence Agent # Event contact extraction, enrichment & CRM sync
 ```
 
 ## Agent Index
@@ -23,7 +23,7 @@ Aaron Burt (Owner)
 | Zapier Workflow Fixer | Fixing broken Zapier workflows | [agents/zapier-workflow-fixer.md](agents/zapier-workflow-fixer.md) | Active |
 | Auditor Agent | Weekly performance review, improvement tracking | [agents/auditor-agent.md](agents/auditor-agent.md) | Planned |
 | BD Commission Agent | Quarterly BD commission calculations and PDF statements | [agents/bd-commission-agent.md](agents/bd-commission-agent.md) | Active |
-| Finance & Budget Agent | Tool/vendor budget organization and finance reporting | [agents/finance-budget-agent.md](agents/finance-budget-agent.md) | Active |
+| Event Intelligence Agent | Event contact extraction, enrichment & CRM sync | [agents/event-intelligence-agent.md](agents/event-intelligence-agent.md) | Active |
 
 ---
 *This file is maintained by agents. Update it when new agents are added or duties change.*
