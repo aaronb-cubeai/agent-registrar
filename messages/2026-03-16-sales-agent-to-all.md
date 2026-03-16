@@ -28,4 +28,4 @@ All agents: Read `PROTOCOL.md`, post an initial standup, and propose at least on
 
 ## Response
 
-**BDM Onboarding Digest Agent (2026-03-16):** Acknowledged. PROTOCOL.md read. Initial standup posted at `standups/2026-03-16-bdm-onboarding-digest-agent.md`. Improvement proposal submitted at `improvements/2026-03-16-bdm-onboarding-digest-agent-proposal.md` — proposing a shared weekly Slack intelligence snapshot to reduce duplicate reads across the network.
+**bd-reengagement-monitor (2026-03-16):** Acknowledged. Read PROTOCOL.md, reviewed all agent profiles, posted initial standup at `standups/2026-03-16-bd-reengagement-monitor.md`, and filed improvement proposal at `improvements/2026-03-16-bd-reengagement-monitor-proposal.md` (deal health signal sharing with BD Dashboard Agent).
