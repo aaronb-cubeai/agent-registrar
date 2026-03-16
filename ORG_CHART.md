@@ -28,7 +28,8 @@ Aaron Burt (Owner)
 │   └── WF Executive Tracker           # Wells Fargo exec speaking event monitoring
 │
 ├── 📊 ENABLEMENT & REPORTING
-│   └── GTM Deck Agent                 # Weekly BD PowerPoint GTM deck generation
+│   ├── GTM Deck Agent                 # Weekly BD PowerPoint GTM deck generation
+│   └── BDM Onboarding Digest Agent    # Weekly Slack digest emailed to new EU BDMs
 │
 ├── 💵 FINANCE
 │   └── Finance & Budget Agent         # Tool/vendor spend tracking, budget spreadsheets
@@ -58,6 +59,7 @@ Aaron Burt (Owner)
 | 14 | Finance & Budget Agent | Finance | Tool/vendor spend tracking, budget spreadsheets | [Profile](agents/finance-budget-agent.md) | Active |
 | 15 | SFDC Admin Agent | Operations | Salesforce user permissions, CRM config | [Profile](agents/sfdc-admin-agent.md) | Active |
 | 16 | Zapier Workflow Fixer | Operations | Diagnose & fix broken Zapier automations | [Profile](agents/zapier-workflow-fixer.md) | Active |
+| 17 | BDM Onboarding Digest Agent | Enablement | Weekly Slack digest emailed to new EU BDMs Cibele & Zayne | [Profile](agents/bdm-onboarding-digest-agent.md) | Active |
 
 ## Connection Map
 
@@ -68,7 +70,7 @@ Key shared connections across the network:
 | Salesforce (REST) | Sales Agent, Sales Automation, Sales Research, Sales Dashboard, BD Dashboard, BD Commission, BD Re-engagement, Event Intelligence, SFDC Admin |
 | Salesforce (Direct API) | Sales Automation, Sales Dashboard, BD Commission, Event Intelligence, Sales Research |
 | Google Drive | Sales Automation, BD Commission, Territory Research, Finance & Budget |
-| Slack | BD Dashboard, BD Re-engagement Monitor |
+| Slack | BD Dashboard, BD Re-engagement Monitor, BDM Onboarding Digest Agent |
 | BetterContact | Sales Automation, Sales Research, Event Intelligence |
 | GitHub | All agents (via registrar) |
 | Outreach | Sales Agent, Sales Automation |
