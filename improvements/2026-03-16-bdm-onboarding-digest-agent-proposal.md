@@ -1,54 +1,46 @@
-# Improvement Proposal: Shared Weekly Slack Intelligence Snapshot
+# Improvement Proposal: Auto-Populate New BDM Onboarding Bank Hit Lists from Territory Research Data
 
 - **Proposed by:** bdm-onboarding-digest-agent
 - **Date:** 2026-03-16
 - **Status:** proposed
 - **Impact:** high
-- **Agents affected:** bdm-onboarding-digest-agent, bd-dashboard-agent, gtm-deck-agent, sales-research-agent, bd-reengagement-monitor
+- **Agents affected:** bdm-onboarding-digest-agent, territory-research-agent, event-intelligence-agent
 
 ## Problem
 
-At least 3–4 agents in the network independently read Slack to do their work:
-- **BDM Onboarding Digest Agent** — reads 10+ channels every Friday for the weekly email
-- **BD Dashboard Agent** — reads Slack for BD activity briefs
-- **BD Re-engagement Monitor** — monitors Slack for post-meeting follow-up signals
-- **GTM Deck Agent** — likely pulls Slack signal for the weekly BD PowerPoint
+When a new BDM joins CUBE AI, they need a prioritized list of target accounts to begin outreach. Currently:
 
-Every agent hitting Slack independently creates duplicate API usage, inconsistent data windows, and no shared memory between agents. An insight I surface in my Friday digest (e.g., a competitor callout or a deal update) is invisible to the Sales Research Agent unless it appears in a formal tool output.
+- The onboarding plan includes a blank "Priority Bank Hit List" that the BDM or manager must fill in manually
+- Territory Research Agent has already built 1,800+ researched companies across all target territories — including Spain, Portugal, Brazil, Mexico, UK, Germany, and Northern Europe
+- Event Intelligence Agent tracks events in these same regions where target accounts send delegates
+- There is **zero automated connection** between these agents' outputs and new BDM onboarding materials
+- New hires waste their first week doing research that has already been done
 
 ## Proposed Solution
 
-Designate the **BDM Onboarding Digest Agent** as the weekly Slack intelligence publisher. Each Friday, after generating the human email, also write a structured markdown snapshot to this repo at:
+When a new BDM joins:
 
-```
-weekly-intel/YYYY-WW-slack-snapshot.md
-```
-
-The snapshot would include structured sections:
-- **Deals & Pipeline** (named accounts, stages, signals)
-- **Product Updates** (shipped features, sprint goals)
-- **Competitive Intel** (named competitors, positioning moves)
-- **Regulatory & Market** (mandates, events, catalysts)
-- **People & Hiring** (new hires, role changes)
-- **Open flags** (anything another agent should act on)
-
-Other agents read this file instead of re-scraping Slack, or use it to augment their own reads.
+1. **BDM Onboarding Digest Agent** notifies Territory Research Agent of the new hire's territory (e.g., Spain + Portugal)
+2. **Territory Research Agent** exports a filtered, prioritized list of banks/financial institutions for that territory from its existing Google Sheets database
+3. **BDM Onboarding Digest Agent** auto-populates the Priority Bank Hit List tab in the onboarding spreadsheet and pushes the update to Google Drive/Sheets
+4. **Event Intelligence Agent** is optionally queried for upcoming relevant events in the territory, which are pre-loaded into the Events section of the onboarding plan
+5. The BDM starts Day 1 with a pre-populated, research-backed target account list and event calendar — not blank tables
 
 ## Expected Benefits
 
-- Reduces duplicate Slack API calls across the network
-- Creates a persistent, searchable weekly intelligence archive in GitHub
-- Gives Sales Research, Territory Research, and other agents access to real-time company context without reading Slack themselves
-- Enables the Auditor Agent (when active) to review weekly intel trends across weeks
-- Makes inter-agent coordination easier — agents can reference `weekly-intel/` rather than describing intel in messages
+- New BDMs save **3–5 days of territory research** during ramp
+- Territory Research Agent's work gets **used immediately** rather than sitting in a spreadsheet
+- Outreach quality improves — targets are pre-validated, tiered, and research-backed
+- Consistent, repeatable methodology across all future BDM hires globally
+- Event Intelligence Agent output reaches the right person (the BDM who will attend those events)
 
 ## Implementation Notes
 
-- Requires minor update to my subagent instructions to write the snapshot file in addition to the email
-- No new connections needed — I already have Slack and GitHub
-- Other agents would need to add a step to read the latest `weekly-intel/` file at the start of relevant tasks
-- File format should be consistent week-to-week so agents can parse it reliably
-- Could backfill the 4 weeks already completed if useful for the Auditor Agent
+- Territory Research Agent already exports to Google Sheets with company data and compensation ceiling analysis — the filtering step is low-lift
+- BDM Onboarding Digest Agent already creates onboarding spreadsheets and pushes to Google Drive — the write-back step is already proven
+- Event Intelligence Agent is already tracking Spain/Portugal/EU events
+- Trigger: Aaron assigns territory to new BDM → agents receive inter-agent message → data flows → onboarding spreadsheet is pre-populated before Day 1
+- No new connections required — all agents already have Google Drive and GitHub access
 
 ## Owner Decision
 
