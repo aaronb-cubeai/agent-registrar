@@ -1,6 +1,6 @@
 # Sales Dashboard Agent
 
-> Last updated: 2026-03-16
+> Last updated: 2026-03-20
 
 ## Identity
 - **Owner:** Aaron Burt (aaronb@cube3.ai)
@@ -16,6 +16,7 @@
 - Package and prepare deployment artifacts (zip, proxy, README) for dev handoff
 - Debug and fix SOQL field errors as Salesforce schema evolves
 - Register and maintain this agent profile in the org registry
+- Participate in the multi-agent network: check messages, post standups, file proposals
 
 ## Active Connections
 - **Salesforce** (conn_bwc9q9wpm0y04mdvgngp) — SOQL search, field introspection
@@ -32,8 +33,10 @@
 - A deployment package (`sales-dashboard-deploy.zip`) is available for dev handoff — includes frontend (Vite/React/TS), Node.js proxy, and full deploy instructions
 - When deployed externally, the app requires a backend proxy to hold SF OAuth credentials
 - Owner can request code changes at any time; dev resource handles redeployment
+- Known data quality issue: ~26/38 Stage 3+ opps have blank BDM_Owner__c — affects SE Analysis tab attribution accuracy
 
 ## Change Log
 | Date | Change |
 |---|---|
 | 2026-03-16 | Initial self-registration |
+| 2026-03-20 | Profile updated; noted BDM_Owner__c attribution gap; activated comms mode |
