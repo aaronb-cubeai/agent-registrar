@@ -1,29 +1,37 @@
-# BDM Roster — Canonical Identity File
+# BDM Roster — Cube3.ai
 
-> **Maintained by:** BD Copilot Agent  
-> **Last updated:** 2026-03-20  
-> **Purpose:** Single source of truth for all BD agent identity data. All BD-cluster agents should read from this file instead of hardcoding rep info.
+**Last Updated:** 2026-03-20
+**Maintained By:** Sales Agent (Coordinator)
+**Source of Truth:** All agents MUST read rep data from this file.
 
-## Active BDMs
+---
 
-| Display Name | Legal Name | Role | Territory | Salesforce User ID | Slack ID | Start Date | Status |
-|---|---|---|---|---|---|---|---|
-| Aaron Burt | Aaron Burt | VP of BD / BDM | Global | _TBD_ | _TBD_ | — | Active |
-| Aaron Denum | Aaron Denum | BDM | _TBD_ | _TBD_ | _TBD_ | — | Active |
-| Ugo | Ugo | BDM | _TBD_ | _TBD_ | _TBD_ | — | Active |
-| Cibele | Cibele | BDM | _TBD_ | _TBD_ | _TBD_ | — | Active |
-| Zayne | Zayne | BDM | _TBD_ | _TBD_ | _TBD_ | — | Active |
+## Active Reps
 
-## Common Misspellings to Watch For
+| Name | Role | Salesforce ID | Email | Salesforce Username | Slack ID | Status |
+|---|---|---|---|---|---|---|
+| Aaron Burt | VP Sales & Partnerships | `005VT000000MGEEYA4` | aaronb@cube3.ai | aaronb@cube3.ai | *(TBD)* | ✅ Active |
+| Aaron Denum | BDM | `005VT00000FqpVdYAJ` | aarondh@cube3.ai | aarondh@cube3.ai | *(TBD)* | ✅ Active |
+| Cibele Kojima | BDM | `005VT00000MYqltYAD` | cibelekp@cube3.ai | cibelekp@cube3.ai | *(TBD)* | ✅ Active |
+| Ugo Lemonnier | BDM | `005VT00000LOJTdYAP` | ugol@cube3.ai | ugol@cube3.ai | *(TBD)* | ✅ Active |
+| Zayne Seibert | BDM | `005VT00000MYqNhYAL` | zaynes@cube3.ai | zaynes@cube3.ai | *(TBD)* | ✅ Active |
 
-| Wrong | Correct |
-|---|---|
-| Sabelle | Cibele |
-| Aaron Denham | Aaron Denum |
+---
 
 ## Notes
 
-- **BD Copilot Agent** is responsible for keeping this file updated when team changes occur
-- All consuming agents should reference this file rather than maintaining their own rep lists
-- When a new BDM joins: update this file → all agents pick up the change automatically
-- Salesforce IDs and Slack IDs marked _TBD_ — BD Copilot or SFDC Admin to fill in
+- **Spelling matters:** It's "Aaron Denum" (not Denham), "Cibele Kojima" (not Sabelle), "Zayne Seibert" (not Zane)
+- Slack IDs still TBD — BD Copilot Agent to fill these in
+- When a new BDM is hired or someone leaves, update this file and post a message in `messages/` to notify all agents
+
+## Agents That Read This File
+
+1. GTM Deck Agent
+2. BD Dashboard Agent
+3. BD Commission Agent
+4. BD Re-engagement Monitor
+5. Sales Dashboard Agent
+6. Sales Automation Agent
+7. Territory Research Agent
+8. BD Copilot Agent
+9. SFDC Admin Agent
