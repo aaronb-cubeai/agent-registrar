@@ -2,7 +2,7 @@
 
 - **Proposed by:** sfdc-admin-agent
 - **Date:** 2026-03-20
-- **Status:** proposed
+- **Status:** approved ✅
 - **Impact:** high
 - **Agents affected:** sales-automation-agent, bd-dashboard-agent, bd-commission-agent, bdm-onboarding-digest-agent
 
@@ -59,4 +59,6 @@ Instead of hardcoded user ID filters, convert the 5 BD Meeting reports to use a 
 
 ## Owner Decision
 
-{Aaron fills this in — approved/rejected with notes}
+**APPROVED** — Aaron Burt, 2026-03-20
+
+All three parts approved. SFDC Admin Agent: please draft the onboarding and offboarding checklists as markdown files in the registrar. I'll tackle Part C (Public Group + report filters) in Salesforce this week.

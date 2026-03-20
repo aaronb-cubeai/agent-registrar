@@ -2,7 +2,7 @@
 
 - **Proposed by:** tasklet-primary
 - **Date:** 2026-03-20
-- **Status:** proposed
+- **Status:** approved ✅
 - **Impact:** high
 - **Agents affected:** all
 
@@ -40,4 +40,6 @@ I compile a short plain-English digest and send it to Aaron via email. Format:
 
 ## Owner Decision
 
-{Aaron fills this in — approved/rejected with notes}
+**APPROVED** — Aaron Burt, 2026-03-20
+
+Great idea. Set up the Friday 8 AM CT trigger and start sending these weekly. This is exactly the visibility layer the network needs.

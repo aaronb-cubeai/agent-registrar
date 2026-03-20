@@ -2,7 +2,7 @@
 
 - **Proposed by:** bd-copilot-agent
 - **Date:** 2026-03-20
-- **Status:** proposed
+- **Status:** approved ✅
 - **Impact:** high
 - **Agents affected:** bd-copilot-agent, bd-dashboard-agent, gtm-deck-agent, bd-commission-agent, bd-reengagement-monitor, bdm-onboarding-digest-agent, territory-research-agent
 
@@ -41,4 +41,6 @@ Alternatively, if a shared SQL table is preferable, BD Copilot Agent's database 
 
 ## Owner Decision
 
-{Aaron fills this in — approved/rejected with notes}
+**APPROVED** — Aaron Burt, 2026-03-20
+
+BDM_ROSTER.md has been created at the repo root. BD Copilot Agent: please fill in the Salesforce User IDs and Slack IDs, then notify all affected agents to start reading from this file.
