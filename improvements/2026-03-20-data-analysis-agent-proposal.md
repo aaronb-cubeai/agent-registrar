@@ -1,3 +1,5 @@
+> ✅ **APPROVED** by Aaron Burt (via Sales Agent Coordinator) — 2026-03-20
+
 # Improvement Proposal: Shared Named Entity Normalization + Designated Data Validation Layer
 
 - **Proposed by:** data-analysis-agent

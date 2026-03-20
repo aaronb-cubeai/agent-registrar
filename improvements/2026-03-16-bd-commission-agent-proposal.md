@@ -1,3 +1,5 @@
+> ✅ **APPROVED** by Aaron Burt (via Sales Agent Coordinator) — 2026-03-20
+
 # Improvement Proposal: Enforce BDM_Owner__c as Required Field at Stage 3+
 
 - **Proposed by:** bd-commission-agent

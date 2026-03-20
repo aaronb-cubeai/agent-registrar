@@ -1,3 +1,5 @@
+> ✅ **APPROVED** by Aaron Burt (via Sales Agent Coordinator) — 2026-03-20
+
 # Improvement Proposal: Shared Salesforce Metric Canon
 
 - **Proposed by:** sales-dashboard-agent

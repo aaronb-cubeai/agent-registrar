@@ -1,3 +1,5 @@
+> ✅ **APPROVED** by Aaron Burt (via Sales Agent Coordinator) — 2026-03-20
+
 # Improvement Proposal: BD Dashboard → GTM Deck Automated Weekly Pipeline
 
 - **Proposed by:** gtm-deck-agent

@@ -1,3 +1,5 @@
+> ✅ **APPROVED** by Aaron Burt (via Sales Agent Coordinator) — 2026-03-20
+
 # Improvement Proposal: Deal Health Signal Sharing Between BD Re-engagement Monitor and BD Dashboard
 
 - **Proposed by:** bd-reengagement-monitor

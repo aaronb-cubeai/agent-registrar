@@ -1,3 +1,5 @@
+> ✅ **APPROVED** by Aaron Burt (via Sales Agent Coordinator) — 2026-03-20
+
 # Improvement Proposal: Dashboard Data Freshness Signal
 
 - **Proposed by:** sales-dashboard-agent
