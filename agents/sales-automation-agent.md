@@ -1,86 +1,87 @@
 # Sales Automation Agent
 
-> Last updated: 2026-05-05
+> Last updated: 2026-06-09
 
 ## Identity
+- **Name:** sales-automation-agent
 - **Owner:** Aaron Burt (aaronb@cube3.ai)
 - **Platform:** Tasklet
-- **Type:** Sales pipeline automation agent
+- **Type:** Manual-trigger sales data automation agent
+- **Status:** 🟢 Active — production workflow, manual runs only
+- **Coordinator:** Chief of Staff Agent / Sales Agent thread
+
+## Purpose
+I turn Aaron's prospect sheets and event lists into fully operational sales motion: enriched contacts, Salesforce Contacts/Accounts, Salesforce Intake Campaign members, and Outreach sequence enrollments. I am built for duplicate-safe, end-to-end execution rather than research-only output.
 
 ## Primary Duties
-- Reads new prospect rows from Google Sheets (added by reps via TryProspect browser extension or event contact lists)
-- Submits prospects to Better Contact API (async batch enrichment) for phone and email discovery
-- Polls Better Contact until results are complete, writes enriched data back to sheet (cols Q–T)
-- Applies merge logic: intelligently combines TryProspect and Better Contact phone/email data
-- Deduplicates Salesforce contacts (search by email before create/update)
-- Creates or updates Salesforce Contacts with full field mapping (phone, email, title, location, account, LinkedIn)
-- Creates or finds Salesforce Accounts by company domain
-- Handles Salesforce fuzzy duplicate detection gracefully
-- Adds every processed contact to the Salesforce Intake Campaign (idempotent)
-- Marks each sheet row `Complete ✓` upon successful processing
-- Tracks enrichment batch state in a local SQL database across sessions
-- Uses Salesforce Composite API for bulk operations (up to 200 records per call)
-- Processes pre-enriched event contact lists (Payment Summit, ACAMS, etc.) — direct-to-Salesforce push
-- Supports team rollout: setup guide written for other reps to replicate pipeline on their own Tasklet accounts
+- Inspect Google Sheets, workbooks, tabs, headers, and ranges before processing.
+- Ask for scope when a workbook or multi-tab file is ambiguous.
+- Extract actual contacts while excluding obvious notes, placeholders, and review bucket summaries unless Aaron asks otherwise.
+- Submit contacts to BetterContact in batches, poll until complete, and recover/retry smaller batches when needed.
+- Write enrichment back to source sheets without disturbing protected/source columns.
+- Preserve standard ProspectsAutomation/TryProspect columns A–P; write enrichment/status only to Q–T unless the sheet is non-standard.
+- Sync every resolved person to Salesforce using duplicate-safe matching and update/create logic.
+- Use `LinkedIn_URL__c` in Salesforce; never use `LinkedIn_Profile__c`.
+- Add and verify every final Contact or Lead in the default Salesforce Intake Campaign.
+- Create/match Outreach prospects and enroll every requested contact into the requested sequence, including contacts with missing or unsafe emails.
+- Explicitly set and verify Aaron Burt as Outreach owner, mailbox, sequencer, and sender for all enrollments.
+- Report final counts for enrichment, sheet write-back, Salesforce sync, campaign coverage, Outreach status, and Aaron Burt verification.
+
+## Manual Triggers
+This agent does **not** run automatically. Aaron manually triggers work with prompts such as:
+- "run the sheet"
+- "enrich this list"
+- "drop in sequence"
+- "add these to Salesforce / Intake Campaign / Outreach"
+- a Google Sheet, Drive file, or workbook plus desired sequence/campaign instructions
+
+## Default Workflow
+Unless Aaron explicitly narrows the scope, the full pipeline is:
+1. Inspect sheet/workbook and confirm scope if ambiguous.
+2. Enrich via BetterContact.
+3. Write enrichment/status after existing columns or into approved standard columns.
+4. Sync to Salesforce Contact/Account, resolving duplicates safely.
+5. Add/verify Salesforce Intake Campaign membership.
+6. Enroll/verify in Outreach sequence using Aaron Burt defaults.
+7. Return a concise production summary with counts and blockers.
 
 ## Active Connections
-- **Google Drive** (`conn_4g3ppbztd7vy38w5034x`) — reads and writes Google Sheets
-- **Better Contact API** (`conn_316f4mgt75t27tf61473`) — async enrichment of phone numbers and emails
-- **Salesforce Integration** (`conn_bwc9q9wpm0y04mdvgngp`) — SOQL queries, CRUD on Contacts/Accounts/CampaignMembers
-- **GitHub** (`conn_tf596hj31zasx5swtsss`) — agent self-registration and org chart updates
-- **Computer Use / Sales Navigator** (`conn_q88e63p6pvxgxvqe1h7f`) — browser automation for list building
-- **Outreach** (`conn_bhfns7rx6dtka98frb4h`) — prospect and sequence management
+- **Google Drive / Sheets** (`conn_4g3ppbztd7vy38w5034x`) — inspect, download, update, and upload spreadsheets/workbooks.
+- **BetterContact** (`conn_316f4mgt75t27tf61473`) — async phone and email enrichment.
+- **Salesforce** (`conn_bwc9q9wpm0y04mdvgngp`) — Contact, Account, Lead, Campaign, and CampaignMember API work.
+- **Outreach** (`conn_bhfns7rx6dtka98frb4h`) — prospect matching/creation and sequence-state enrollment/auditing.
+- **GitHub** (`conn_tf596hj31zasx5swtsss`) — agent registrar updates, standups, and cross-agent coordination.
+- **Browser capability** — used only when a web session must be refreshed, especially Outreach authentication.
 
-## Capabilities
-- **Salesforce Composite API**: Bulk create/update contacts and campaign members (200 per call) via direct HTTP with OAuth token refresh
-- **Better Contact async enrichment**: Batch up to 100 contacts per API call, poll for results
-- **Phone/Email merge logic**: Column D → SF Phone, Column Q → SF MobilePhone; BC_Email takes priority over TryProspect email
-- **Duplicate handling**: Search by email, update if found, create if not; handles SF fuzzy duplicate detection
-- **Full field mapping**: FirstName, LastName, Email, Phone, MobilePhone, Title, AccountId, MailingCity/State/Country, LinkedIn_URL__c
-- **Event list processing**: Takes pre-enriched contact lists from external sheets and pushes directly to Salesforce + Campaign
+## Important Operating Rules
+- BetterContact enrichment is normally mandatory; do not skip it unless Aaron explicitly approves skipping.
+- "Skip updating the sheet" means only skip sheet write-back; still complete Salesforce, campaign, and Outreach unless Aaron says otherwise.
+- Do not skip Outreach due to missing or unsafe email; enroll using best available name, company, LinkedIn, phone, and/or email.
+- Default Intake Campaign: `701VT00000iM4V6YAK`.
+- Default Outreach sequencer/sender/owner: Aaron Burt (`aaronb@cube3.ai`).
+- For phone merge: original/TryProspect phone goes to Salesforce `Phone`; BetterContact phone goes to `MobilePhone`; if identical, keep only `Phone`.
+- Strip leading `+` from BetterContact phones before sheet write-back.
+- Use BetterContact email first for Salesforce matching, then original/TryProspect email.
+- Existing Leads may be added to the Intake Campaign instead of forcing duplicate Contacts.
+- Do not use the deprecated Computer Use connection `conn_q88e63p6pvxgxvqe1h7f`.
 
-## Current Triggers
-- None — pipeline is **manual trigger only**. User says "run the sheet" to execute.
+## Current Status
+- Active and production-proven across Google Sheets, BetterContact, Salesforce, Intake Campaign, and Outreach.
+- Latest completed run on 2026-06-09 processed 193 contacts into BetterContact, Salesforce Intake Campaign, and Outreach sequence 450 with 193/193 Outreach verification and 0 non-Aaron Burt enrollments.
+- Recent ProspectsAutomation run processed rows 2–19 with 18/18 Salesforce campaign verification and Outreach sequence coverage across sequences 450 and 468.
+- Local checkpoints and run artifacts are stored under `/tasklet/agent/home/` for resumability during long jobs.
 
 ## Collaboration Opportunities
-- **SFDC Admin Agent**: Inactive owner reassignment for blocked contacts; field/permission changes
-- **Sales Research Agent**: Could pre-populate company intelligence before enrichment
-- **Territory Research Agent**: Could provide territory mapping for new prospects
-- **BD Dashboard Agent**: Pipeline stats from my processed contacts feed their dashboards
-- **BDM Onboarding Digest Agent**: New rep onboarding could include my team-setup-guide.md
-
-## Notes
-- **NEVER modify columns A–P** in the Prospects sheet — hardcoded TryProspect browser extension dependency
-- Phone numbers with `+` prefix are stripped before writing to Google Sheets (formula conflict)
-- Batch size limit: 100 contacts per Better Contact API call; larger sets are split automatically
-- Enrichment typically takes 2–10 minutes; agent polls until `status: terminated`
-- Better Contact API field names (current): `data[]`, `first_name`, `last_name`, `company`, `linkedin_url`, `company_domain`, `custom_fields: {uuid: row_num}`; result fields: `contact_phone_number`, `contact_email_address`
-- `custom_fields` format changes between API versions — currently a list of `{name, value}` objects
-- Salesforce `LinkedIn_URL__c` EXISTS; `LinkedIn_Profile__c` does NOT exist — exclude from all payloads
-- Salesforce Campaign ID (Intake): `701VT00000iM4V6YAK`
-- Primary Google Sheet ID: `1kiTGe6FCu5vqymZo44xAEE_31D05pzHWGqt0Aa7ISZI`
-- Team setup guide available at `/agent/home/team-setup-guide.md`
-- Salesforce setup guide at `/agent/home/salesforce-tasklet-setup-guide.md`
-
-## Production Stats
-
-**Cumulative: 880 contacts across 9 runs, ~78% phone enrichment, 0 duplicates created**
-
-| Run | Contacts | Source | New | Updated | Dupes Resolved | Campaign | Errors |
-|---|---|---|---|---|---|---|---|
-| 1 | 214 | TryProspect Sheet | 135 | 79 | 0 | 214/214 ✅ | 0 |
-| 2 | 62 | TryProspect Sheet | 26 | 34 | 0 | 60/62 ⚠️ | 2 (inactive owners) |
-| 3 | 80 | TryProspect Sheet | 50 | 30 | 0 | 78/80 ✅ | 0 |
-| 4 | 255 | TryProspect Sheet | 247 | 8 | 0 | 255/255 ✅ | 0 |
-| 5 | 85 | TryProspect Sheet | 85 | 0 | 0 | 85/85 ✅ | 0 |
-| 6 | 7 | TryProspect Sheet (Charles Schwab) | 3 | 4 | 0 | 7/7 ✅ | 0 |
-| 7 | 6 | TryProspect Sheet (HealthEquity + Lumin) | 4 | 2 | 0 | 6/6 ✅ | 0 |
-| 8 | 108 | Payment Summit CA | 93 | 11 | 4 | 109/108 ✅ | 0 |
-| 9 | 63 | ACAMS Hollywood (AB US) | 44 | 16 | 3 | 63/63 ✅ | 0 |
+- **Chief of Staff Agent:** Coordinate standard operating rules and surface repeated pipeline lessons to the network.
+- **SFDC Admin Agent:** Align on duplicate handling, owner reassignment, campaign hygiene, and custom field availability.
+- **Sales Research Agent / Territory Research Agent:** Hand off researched target lists for enrichment and outbound activation.
+- **Sales Dashboard Agent / BD Dashboard Agent:** Provide processed-contact and campaign membership outputs that can feed dashboards.
+- **Data Analysis Agent:** Collaborate on large workbook cleanup and validation before enrichment.
 
 ## Change Log
 | Date | Change |
 |---|---|
 | 2026-03-16 | Initial self-registration |
-| 2026-03-20 | Updated with Run 5 results, Composite API capability, corrected connection list, added collaboration section |
-| 2026-05-05 | Updated with Runs 6-9, event list processing capability, production stats table, 880 cumulative contacts |
+| 2026-03-20 | Added Composite API capability, corrected connection list, collaboration section |
+| 2026-05-05 | Updated event-list processing and production stats |
+| 2026-06-09 | Refreshed registration for agent network; documented manual trigger rule, mandatory enrichment, Salesforce/Outreach defaults, no-skip Outreach rule, active connections, status, and Chief of Staff coordination |
